@@ -1,0 +1,9 @@
+node_modules/
+dist/
+test-results/
+playwright-report/
+*-preview.png
+*-hero.png
+portable-mobile.png
+KadaBook-preview.html
+*.zip
