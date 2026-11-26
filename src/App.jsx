@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Presentation } from "lucide-react";
+import { Presentation, ShieldCheck } from "lucide-react";
 import { startOriginalScene } from "./originalScene.js";
 import { ICON_PATHS } from "./icons.js";
 import { siteConfig } from "./siteConfig.js";
@@ -461,13 +461,23 @@ export default function App() {
             <a href="#why">Why KadaBook</a>
             <a href="#screens">Screens</a>
             <a
-              className="presentation-link"
+              className="footer-icon-link"
               href="https://smart-matrixgroup.github.io/kadabook-product-presentation/"
               target="_blank"
               rel="noopener noreferrer"
             >
               <Presentation size={15} strokeWidth={2} aria-hidden="true" />
               <span>Presentation</span>
+            </a>
+            <a
+              className="footer-icon-link"
+              href="https://kadabook-brand.web.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="View Privacy Policy and Terms & Conditions"
+            >
+              <ShieldCheck size={15} strokeWidth={2} aria-hidden="true" />
+              <span>Privacy &amp; Terms</span>
             </a>
             <a className="wa" {...whatsappProps}>
               WhatsApp
