@@ -375,7 +375,17 @@ function Screens() {
 export default function App() {
   const rootRef = useRef(null);
   const [contactOpen, setContactOpen] = useState(false);
-  const [legalOpen, setLegalOpen] = useState(false);
+  const [legalOpen, setLegalOpen] = useState(() => {
+    const hash = window.location.hash;
+    return hash === "#privacy" || hash === "#terms";
+  });
+  const [legalTab, setLegalTab] = useState(() =>
+    window.location.hash === "#terms" ? "terms" : "privacy",
+  );
+  const openLegal = (tab) => {
+    setLegalTab(tab);
+    setLegalOpen(true);
+  };
   const number = String(siteConfig.whatsappNumber || "")
     .replace(/\s+/g, "")
     .replace(/^\+/, "");
@@ -415,13 +425,15 @@ export default function App() {
           <a href="#screens">Screens</a>
           <a
             className="pill presentation"
-            href="https://smart-matrixgroup.github.io/kadabook-product-presentation/"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="View KadaBook Presentation"
+            href="#privacy"
+            onClick={(event) => {
+              event.preventDefault();
+              openLegal("privacy");
+            }}
+            title="View KadaBook Privacy Policy"
           >
-            <Presentation size={15} strokeWidth={2} aria-hidden="true" />
-            <span>Presentation</span>
+            <ShieldCheck size={15} strokeWidth={2} aria-hidden="true" />
+            <span>Privacy Policy</span>
           </a>
           <a className="pill wa" {...whatsappProps}>
             WhatsApp us
@@ -474,15 +486,27 @@ export default function App() {
             <a href="#how">How it works</a>
             <a href="#why">Why KadaBook</a>
             <a href="#screens">Screens</a>
-            <button
-              type="button"
+            <a
               className="footer-icon-link"
-              onClick={() => setLegalOpen(true)}
-              title="View Privacy Policy and Terms of Use"
+              href="#privacy"
+              onClick={(event) => {
+                event.preventDefault();
+                openLegal("privacy");
+              }}
             >
               <ShieldCheck size={15} strokeWidth={2} aria-hidden="true" />
-              <span>Privacy &amp; Terms</span>
-            </button>
+              <span>Privacy Policy</span>
+            </a>
+            <a
+              className="footer-icon-link"
+              href="#terms"
+              onClick={(event) => {
+                event.preventDefault();
+                openLegal("terms");
+              }}
+            >
+              <span>Terms of Use</span>
+            </a>
             <a className="wa" {...whatsappProps}>
               WhatsApp
             </a>
@@ -494,7 +518,11 @@ export default function App() {
         onClose={() => setContactOpen(false)}
         whatsappNumber={number}
       />
-      <LegalDialog open={legalOpen} onClose={() => setLegalOpen(false)} />
+      <LegalDialog
+        open={legalOpen}
+        onClose={() => setLegalOpen(false)}
+        initialTab={legalTab}
+      />
     </div>
   );
 }
