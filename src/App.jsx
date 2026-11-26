@@ -488,17 +488,6 @@ export default function App() {
             <a href="#screens">Screens</a>
             <a
               className="footer-icon-link"
-              href="#privacy"
-              onClick={(event) => {
-                event.preventDefault();
-                openLegal("privacy");
-              }}
-            >
-              <ShieldCheck size={15} strokeWidth={2} aria-hidden="true" />
-              <span>Privacy Policy</span>
-            </a>
-            <a
-              className="footer-icon-link"
               href="#terms"
               onClick={(event) => {
                 event.preventDefault();
