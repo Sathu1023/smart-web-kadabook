@@ -4,7 +4,6 @@ import { startOriginalScene } from "./originalScene.js";
 import { ICON_PATHS } from "./icons.js";
 import { siteConfig } from "./siteConfig.js";
 import ContactDialog from "./components/ContactDialog.jsx";
-import LegalDialog from "./components/LegalDialog.jsx";
 import logo from "./assets/logo.png";
 import dash from "./assets/H1-home-ta-v2.png";
 import menu from "./assets/P1-products.png";
@@ -375,17 +374,6 @@ function Screens() {
 export default function App() {
   const rootRef = useRef(null);
   const [contactOpen, setContactOpen] = useState(false);
-  const [legalOpen, setLegalOpen] = useState(() => {
-    const hash = window.location.hash;
-    return hash === "#privacy" || hash === "#terms";
-  });
-  const [legalTab, setLegalTab] = useState(() =>
-    window.location.hash === "#terms" ? "terms" : "privacy",
-  );
-  const openLegal = (tab) => {
-    setLegalTab(tab);
-    setLegalOpen(true);
-  };
   const number = String(siteConfig.whatsappNumber || "")
     .replace(/\s+/g, "")
     .replace(/^\+/, "");
@@ -425,11 +413,9 @@ export default function App() {
           <a href="#screens">Screens</a>
           <a
             className="pill presentation"
-            href="#privacy"
-            onClick={(event) => {
-              event.preventDefault();
-              openLegal("privacy");
-            }}
+            href="./privacy/"
+            target="_blank"
+            rel="noopener noreferrer"
             title="View KadaBook Privacy Policy"
           >
             <ShieldCheck size={15} strokeWidth={2} aria-hidden="true" />
@@ -488,11 +474,9 @@ export default function App() {
             <a href="#screens">Screens</a>
             <a
               className="footer-icon-link"
-              href="#terms"
-              onClick={(event) => {
-                event.preventDefault();
-                openLegal("terms");
-              }}
+              href="./terms/"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <span>Terms of Use</span>
             </a>
@@ -506,11 +490,6 @@ export default function App() {
         open={contactOpen}
         onClose={() => setContactOpen(false)}
         whatsappNumber={number}
-      />
-      <LegalDialog
-        open={legalOpen}
-        onClose={() => setLegalOpen(false)}
-        initialTab={legalTab}
       />
     </div>
   );
