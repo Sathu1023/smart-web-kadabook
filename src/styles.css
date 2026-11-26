@@ -145,6 +145,20 @@ header nav a:not(.pill):hover {
   color: var(--cy);
   flex: none;
 }
+header nav .pill.presentation {
+  background: #ffffff;
+  color: #02112b;
+  border-color: #ffffff;
+  box-shadow: 0 4px 18px rgba(255, 255, 255, 0.22);
+}
+header nav .pill.presentation svg {
+  color: #02112b;
+}
+header nav .pill.presentation:hover {
+  background: #e6f4ff;
+  border-color: #e6f4ff;
+  color: #02112b;
+}
 a:focus-visible,
 button:focus-visible {
   outline: 2px solid #fff;
