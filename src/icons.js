@@ -18,4 +18,6 @@ export const ICON_PATHS = {
   users:
     "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2 M9 7a4 4 0 1 0 0 8 4 4 0 0 0 0-8 M22 21v-2a4 4 0 0 0-3-3.87 M16 3.13a4 4 0 0 1 0 7.75",
   store: "M3 9l1.2-5h15.6L21 9 M3 9h18v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z M9 22V12h6v10",
+  slides:
+    "M2 3h20v14H2z M8 21h8 M12 17v4 M7 7h4v6H7z M15 9h2 M15 13h2",
 };

@@ -410,6 +410,16 @@ export default function App() {
           <a href="#how">How it works</a>
           <a href="#why">Why KadaBook</a>
           <a href="#screens">Screens</a>
+          <a
+            className="pill presentation"
+            href="https://smart-matrixgroup.github.io/kadabook-product-presentation/"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="View KadaBook Presentation"
+          >
+            <Icon name="slides" />
+            Presentation
+          </a>
           <a className="pill wa" {...whatsappProps}>
             WhatsApp us
           </a>
@@ -449,6 +459,15 @@ export default function App() {
             <a href="#how">How it works</a>
             <a href="#why">Why KadaBook</a>
             <a href="#screens">Screens</a>
+            <a
+              className="wa"
+              href="https://smart-matrixgroup.github.io/kadabook-product-presentation/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Icon name="slides" />
+              Presentation
+            </a>
             <a className="wa" {...whatsappProps}>
               WhatsApp
             </a>

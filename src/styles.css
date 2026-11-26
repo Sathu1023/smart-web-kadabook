@@ -125,6 +125,21 @@ header nav a:not(.pill):hover {
   box-shadow: none;
   border: 1px solid var(--ln);
 }
+.pill.presentation {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--ink);
+  box-shadow: none;
+  border: 1px solid var(--ln);
+  gap: 6px;
+}
+.pill.presentation:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+.pill.presentation .ic svg {
+  width: 15px;
+  height: 15px;
+}
 a:focus-visible,
 button:focus-visible {
   outline: 2px solid #fff;
