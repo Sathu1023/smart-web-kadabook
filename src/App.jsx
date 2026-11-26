@@ -445,9 +445,21 @@ export default function App() {
             <p className="lead">
               Digital accounting, simplified for all shops.
             </p>
-            <a className="pill wa" {...whatsappProps}>
-              Get started on WhatsApp
-            </a>
+            <div className="final-actions">
+              <a className="pill wa" {...whatsappProps}>
+                Get started on WhatsApp
+              </a>
+              <a
+                className="pill presentation"
+                href="https://smart-matrixgroup.github.io/kadabook-product-presentation/"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="View KadaBook Presentation"
+              >
+                <Presentation size={17} strokeWidth={2} aria-hidden="true" />
+                <span>Presentation</span>
+              </a>
+            </div>
           </div>
         </section>
         <footer>
@@ -462,15 +474,6 @@ export default function App() {
             <a href="#how">How it works</a>
             <a href="#why">Why KadaBook</a>
             <a href="#screens">Screens</a>
-            <a
-              className="footer-icon-link"
-              href="https://smart-matrixgroup.github.io/kadabook-product-presentation/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Presentation size={15} strokeWidth={2} aria-hidden="true" />
-              <span>Presentation</span>
-            </a>
             <button
               type="button"
               className="footer-icon-link"
