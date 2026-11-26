@@ -126,29 +126,24 @@ header nav a:not(.pill):hover {
   border: 1px solid var(--ln);
 }
 .pill.presentation {
-  background: transparent;
-  color: var(--mu);
+  background: rgba(79, 209, 255, 0.08);
+  color: var(--ink);
   box-shadow: none;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(120, 190, 255, 0.28);
   gap: 7px;
-  padding: 8px 16px;
-  font-size: 15px;
-  font-weight: 500;
+  padding: 9px 16px;
+  font-size: 14px;
+  font-weight: 600;
   transition: 0.2s;
 }
 .pill.presentation:hover {
   color: #fff;
-  border-color: rgba(255, 255, 255, 0.35);
-  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(79, 209, 255, 0.55);
+  background: rgba(79, 209, 255, 0.16);
 }
-.pill.presentation .ic {
-  display: flex;
-  align-items: center;
-}
-.pill.presentation .ic svg {
-  width: 14px;
-  height: 14px;
-  opacity: 0.75;
+.pill.presentation svg {
+  color: var(--cy);
+  flex: none;
 }
 a:focus-visible,
 button:focus-visible {
@@ -559,10 +554,20 @@ footer {
   display: flex;
   gap: 22px;
   flex-wrap: wrap;
+  align-items: center;
 }
 .fl a {
   color: var(--mu);
   text-decoration: none;
+}
+.fl a.presentation-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.fl a.presentation-link svg {
+  color: var(--cy);
+  flex: none;
 }
 .fl a:hover {
   color: #fff;
