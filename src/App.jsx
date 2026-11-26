@@ -4,6 +4,7 @@ import { startOriginalScene } from "./originalScene.js";
 import { ICON_PATHS } from "./icons.js";
 import { siteConfig } from "./siteConfig.js";
 import ContactDialog from "./components/ContactDialog.jsx";
+import LegalDialog from "./components/LegalDialog.jsx";
 import logo from "./assets/logo.png";
 import dash from "./assets/H1-home-ta-v2.png";
 import menu from "./assets/P1-products.png";
@@ -374,6 +375,7 @@ function Screens() {
 export default function App() {
   const rootRef = useRef(null);
   const [contactOpen, setContactOpen] = useState(false);
+  const [legalOpen, setLegalOpen] = useState(false);
   const number = String(siteConfig.whatsappNumber || "")
     .replace(/\s+/g, "")
     .replace(/^\+/, "");
@@ -469,16 +471,15 @@ export default function App() {
               <Presentation size={15} strokeWidth={2} aria-hidden="true" />
               <span>Presentation</span>
             </a>
-            <a
+            <button
+              type="button"
               className="footer-icon-link"
-              href="https://kadabook-brand.web.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="View Privacy Policy and Terms & Conditions"
+              onClick={() => setLegalOpen(true)}
+              title="View Privacy Policy and Terms of Use"
             >
               <ShieldCheck size={15} strokeWidth={2} aria-hidden="true" />
               <span>Privacy &amp; Terms</span>
-            </a>
+            </button>
             <a className="wa" {...whatsappProps}>
               WhatsApp
             </a>
@@ -490,6 +491,7 @@ export default function App() {
         onClose={() => setContactOpen(false)}
         whatsappNumber={number}
       />
+      <LegalDialog open={legalOpen} onClose={() => setLegalOpen(false)} />
     </div>
   );
 }
