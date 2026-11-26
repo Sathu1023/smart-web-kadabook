@@ -126,19 +126,29 @@ header nav a:not(.pill):hover {
   border: 1px solid var(--ln);
 }
 .pill.presentation {
-  background: rgba(255, 255, 255, 0.1);
-  color: var(--ink);
+  background: transparent;
+  color: var(--mu);
   box-shadow: none;
-  border: 1px solid var(--ln);
-  gap: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  gap: 7px;
+  padding: 8px 16px;
+  font-size: 15px;
+  font-weight: 500;
+  transition: 0.2s;
 }
 .pill.presentation:hover {
-  background: rgba(255, 255, 255, 0.18);
-  border-color: rgba(255, 255, 255, 0.4);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.07);
+}
+.pill.presentation .ic {
+  display: flex;
+  align-items: center;
 }
 .pill.presentation .ic svg {
-  width: 15px;
-  height: 15px;
+  width: 14px;
+  height: 14px;
+  opacity: 0.75;
 }
 a:focus-visible,
 button:focus-visible {
