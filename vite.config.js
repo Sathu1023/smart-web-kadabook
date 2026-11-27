@@ -1,7 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
 import { defineConfig } from "vite";
-import { viteSingleFile } from "vite-plugin-singlefile";
 
 function serveStaticLegalPages() {
   const routes = new Map([
@@ -31,11 +30,11 @@ function serveStaticLegalPages() {
 }
 
 export default defineConfig({
-  plugins: [serveStaticLegalPages(), viteSingleFile()],
+  plugins: [serveStaticLegalPages()],
   base: "./",
   build: {
     target: "es2022",
-    assetsInlineLimit: 1_000_000,
+    assetsInlineLimit: 0,
     chunkSizeWarningLimit: 1500,
   },
 });
